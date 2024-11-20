@@ -12,6 +12,13 @@ using namespace std;
 
 int main();
 {
+	// Create a video mode object
+	VideoMode vm(1920, 1080);
+	// Create and open a window for the game
+	RenderWindow window(vm, "Mandelbrot!!", Style::Default);
+
+  	int width = VideoMode::getDesktopMode().width / 2;
+	int height = VideoMode::getDesktopMode().height / 2;
 	Font font;
 	if (!font.loadFromFile("arial.ttf"))
 	{
@@ -22,6 +29,23 @@ int main();
 	text.setFont(font);
 	text.setColor(sf::Color::White);
 	text.setCharacterSize(36);
+	while (window.isOpen())
+	{
+		/*
+		****************************************
+		Handle the players input
+		****************************************
+		*/
+		Event event;
+		while (window.pollEvent(event))
+		{
+		    if (event.type == Event::Closed)
+		    {
+					// Quit the game when the window is closed
+					window.close();
+		    }
+		}
+	}
 
 return 0;
 }
