@@ -24,4 +24,7 @@ public:
 	size_t countIterations(Vector2f coord);
 	void countIterations(Vector2f coord);
 	Vector2f mapPixelToCoords(Vector2i mousePixel);
+
+private:
+	
 }
