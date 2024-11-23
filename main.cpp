@@ -13,12 +13,14 @@ using namespace std;
 int main();
 {
 	// Create a video mode object
-	VideoMode vm(1920, 1080);
+	//VideoMode vm(1920, 1080);
 	// Create and open a window for the game
+	int pixelWidth = VideoMode::getDesktopMode().width / 2;
+	int pixelHeight = VideoMode::getDesktopMode().height / 2;
+	VideoMode vm(pixelWidth, pixelHeight);
+
 	RenderWindow window(vm, "Mandelbrot!!", Style::Default);
 
-  	int width = VideoMode::getDesktopMode().width / 2;
-	int height = VideoMode::getDesktopMode().height / 2;
 	Font font;
 	if (!font.loadFromFile("arial.ttf"))
 	{
