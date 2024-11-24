@@ -26,7 +26,7 @@ public:
 	Vector2f mapPixelToCoords(Vector2i mousePixel);
 
 private:
-	VertexArray m_Array;
+	VertexArray m_Array(Points);
 	State m_state;
 	Vector2f m_mouseLoationc;
 	Vector2i m_pixel_size;
