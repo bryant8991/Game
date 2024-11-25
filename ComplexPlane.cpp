@@ -27,7 +27,12 @@ void complexPlane::updateRender()
 		{
 			for(int j = 0; j < pixelWidth; j++)
 			{
-				m_vArray[j + i * pixelWidth].position = { (float)j,(float)i };
+				m_vArray[j + i * pixelWidth].position = {(float)j,(float)i};
+				
+				Vector2i pos;
+				pos.push_back(j,i);
+				int iterations = countIterations(mapPixelToCoords(pos));
+				
 			}
 		}
 	}
