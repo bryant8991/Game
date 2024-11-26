@@ -1,4 +1,5 @@
 #include "ComplexPlane.h"
+#include <cmath>
 
 
 ComplexPlane::ComplexPlane(int pixelWidth, int pixelHeight)
@@ -32,8 +33,26 @@ void complexPlane::updateRender()
 				Vector2i pos;
 				pos.push_back(j,i);
 				int iterations = countIterations(mapPixelToCoords(pos));
+				Unit8 r, g, b;
+				iterationsToRGB(iterations, r, g, b);
 				
+				m_vArray[j + i * pixelWidth].color = {r, g, b};
 			}
 		}
 	}
+	m_state = State::DISPLAYING;
+}
+
+void ComplexPlane::zoomIn()
+{
+	m_zoomCount++;
+	Vector2f newLoc;
+	
+	newLoc.y = BASE_HEIGHT * m_aspectRatio * pow(BASE_ZOOM, m_ZoomCount);
+	newLoc.x = BASE_WIDTH * pow(BASE_ZOOM, m_ZoomCount);
+	
+	m_plane_size.x = newLoc.x;
+	m_plane_size.y = newLoc.y;
+
+	m_State = State::CALCULATING;
 }

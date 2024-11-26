@@ -26,6 +26,9 @@ public:
 	Vector2f mapPixelToCoords(Vector2i mousePixel);
 
 private:
+	int countIterations(Vector2f corrd);
+	void iterationsToRGB(size_t count, Unit8& r, Unit8& g,Unit8& b);
+	Vector2f mapPixelToCoords(Vector2i mousePixel);
 	VertexArray m_Array(Points);
 	State m_state;
 	Vector2f m_mouseLoationc;
@@ -34,8 +37,4 @@ private:
 	Vector2f m_plane_size;
 	int m_zoomCount;
 	float m_aspetcRatio;
-	int countIterations(Vector2f corrd);
-	void iterationsToRGB(size_t count, Unit8& r, Unit8& g,Unit8& b);
-	Vector2f mapPixelToCoords(Vector2i mousePixel);
-
 }
