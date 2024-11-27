@@ -1,6 +1,15 @@
 #include "ComplexPlane.h"
 #include <cmath>
-
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <cstdlib>
+#include <string>
+//Make the code easier to type with "using namespace"
+using namespace sf;
+using namespace std;
 
 ComplexPlane::ComplexPlane(int pixelWidth, int pixelHeight)
 {
