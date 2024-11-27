@@ -26,7 +26,7 @@ int main();
 	{
            cout << "ERROR"<< endl;
 	}
-
+	ComplexPlane h(pixelWidth, pixelHight); 
 	Text text;
 	text.setFont(font);
 	text.setColor(sf::Color::White);
