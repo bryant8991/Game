@@ -6,11 +6,12 @@
 #include <vector>
 #include <cstdlib>
 #include <string>
+#include "ComplexPlane.h"
 //Make the code easier to type with "using namespace"
 using namespace sf;
 using namespace std;
 
-int main();
+int main()
 {
 	// Create a video mode object
 	//VideoMode vm(1920, 1080);
@@ -26,7 +27,7 @@ int main();
 	{
            cout << "ERROR"<< endl;
 	}
-	ComplexPlane h(pixelWidth, pixelHight); 
+	ComplexPlane h(pixelWidth, pixelHeight);
 	Text text;
 	text.setFont(font);
 	text.setColor(sf::Color::White);
@@ -46,6 +47,9 @@ int main();
 					// Quit the game when the window is closed
 					window.close();
 		    }
+		   window.clear();
+		   window.draw(h);
+		   window.display();
 		}
 	}
 

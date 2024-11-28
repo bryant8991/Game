@@ -38,7 +38,7 @@ void ComplexPlane::updateRender()
 				pos.x = j;
 				pos.y = i;
 				int iterations = countIterations(mapPixelToCoords(pos));
-				Unit8 r, g, b;
+				Uint8 r, g, b;
 				iterationsToRGB(iterations, r, g, b);
 				
 				m_Array[j + i * pixelWidth].color = {r, g, b};
@@ -116,7 +116,7 @@ int ComplexPlane::countIterations(Vector2f coord)
 	return i;
 }
 
-void ComplexPlane::iterationsToRGB(int count, Unit8& r, Unit8& g, Unit8& b)
+void ComplexPlane::iterationsToRGB(int count, Uint8& r, Uint8& g, Uint8& b)
 {
 	if(count <= 16)
 	{

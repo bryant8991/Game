@@ -32,7 +32,7 @@ public:
 	void zoomIn();
 private:
 	int countIterations(Vector2f corrd);
-	void iterationsToRGB(int count, Unit8& r, Unit8& g, Unit8& b);
+	void iterationsToRGB(int count, Uint8& r, Uint8& g, Uint8& b);
 	Vector2f mapPixelToCoords(Vector2i mousePixel);
 	VertexArray m_Array;
 	State m_state;
