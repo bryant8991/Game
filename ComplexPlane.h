@@ -1,5 +1,13 @@
 #pragma once
 #include <iostream>
+#include <cmath>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <cstdlib>
+#include <string>
 #include <complex>
 using namespace std;
 using namespace sf;
@@ -24,14 +32,14 @@ public:
 	void zoomIn();
 private:
 	int countIterations(Vector2f corrd);
-	void iterationsToRGB(size_t count, Unit8& r, Unit8& g,Unit8& b);
+	void iterationsToRGB(int count, Unit8& r, Unit8& g, Unit8& b);
 	Vector2f mapPixelToCoords(Vector2i mousePixel);
-	VertexArray m_Array(Points);
+	VertexArray m_Array;
 	State m_state;
 	Vector2f m_mouseLoationc;
 	Vector2i m_pixel_size;
 	Vector2f m_plane_center;
 	Vector2f m_plane_size;
 	int m_zoomCount;
-	float m_aspetcRatio;
-}
+	float m_aspectRatio;
+};
